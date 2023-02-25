@@ -1,6 +1,7 @@
 package com.example.filesave
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -23,9 +24,10 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.buttonSave.setOnClickListener {
-            
+
             viewModel.saveText(binding.editTextText.text.toString())
             FileSaver(this).writeToFile(viewModel.savedText.value.toString())
+            Toast.makeText(this,"File Saved",Toast.LENGTH_SHORT).show()
 
 
         }
