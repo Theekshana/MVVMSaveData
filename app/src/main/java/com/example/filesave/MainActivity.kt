@@ -23,8 +23,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.buttonSave.setOnClickListener {
-
-            //val data = binding.editTextText.text.toString()
+            
             viewModel.saveText(binding.editTextText.text.toString())
             FileSaver(this).writeToFile(viewModel.savedText.value.toString())
 
