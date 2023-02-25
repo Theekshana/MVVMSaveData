@@ -5,9 +5,9 @@ import java.io.File
 
 class FileSaver(context: Context) {
 
-
     private val context = context
-    private val fileName = R.string.data.toString()
+    private val fileName = "data.txt"
+
     fun writeToFile(dataToSave: String) {
 
         context.openFileOutput(fileName, Context.MODE_PRIVATE).use {
@@ -17,15 +17,19 @@ class FileSaver(context: Context) {
 
     }
 
-    fun readFromFile():String {
+    fun readFromFile(): String {
 
-        File(context.filesDir,fileName).readText()
-        return ""
+        val readStr = File(context.filesDir, fileName).readText()
+        return readStr
+
 
     }
-
-
 }
+
+
+
+
+
 
 
 

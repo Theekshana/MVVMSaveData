@@ -15,14 +15,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
         binding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.fileSave = viewModel
         binding.lifecycleOwner = this
-
-
 
 
         binding.buttonSave.setOnClickListener {
@@ -32,15 +29,18 @@ class MainActivity : AppCompatActivity() {
             FileSaver(this).writeToFile(viewModel.savedText.value.toString())
 
 
-
         }
         binding.buttonView.setOnClickListener {
-            viewModel.saveText(FileSaver(this).readFromFile())
+
+            binding.view.setText(FileSaver(this).readFromFile())
+
         }
 
-
     }
+
+
 }
+
 
 
 
