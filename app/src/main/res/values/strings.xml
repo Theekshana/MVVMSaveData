@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FileSave</string>
+    <string name="data_to_save">Data To Save</string>
+    <string name="enter_data_here">Enter Data Here</string>
+    <string name="save">SAVE</string>
+    <string name="view">VIEW</string>
+    <string name="data_to_view">View</string>
+    <string name="data"></string>
+</resources>
